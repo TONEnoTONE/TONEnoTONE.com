@@ -1,0 +1,128 @@
+$font-family : 'Lato', sans-serif;
+
+@mixin centeredAbsolute($width, $height){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $width;
+	height: $height;
+	margin-top: -$height/2;
+	margin-left: -$width/2;
+}
+
+@mixin respond-to($media) {
+	@if $media == narrow {
+		@media (max-width : 460px) { @content; }
+	}
+	@else if $media == normal {
+		@media (min-width: 461px) { @content; }
+	}
+}
+
+$blue: #02ACEE;
+$red: #EE1B21;
+$yellow: #F46E1E;
+$green : #00A550;
+$purple : #605EC2;
+$pink : #ed0189;
+$black : #212122;
+$white : #fffffd;
+$offWhite : #ebebea;
+$offBlack : #414141;
+$gray : #a0a0a0;
+$screenBackground : #d9d9d9;
+
+body {
+	margin: 0px;
+	background-color: white;
+}
+
+#ToneNoTone {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	font-family: $font-family;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+$EchoWidth : 320px;
+$EchoWidthNormal : 460px;
+
+#Echo {
+	padding-top: 30px;
+	@include respond-to(narrow){
+		@include centeredAbsolute($EchoWidth, 400px);
+	}
+	@include respond-to(normal){
+		@include centeredAbsolute($EchoWidthNormal, 400px);	
+	}
+}
+
+#Echo #Description {
+	font-family: $font-family;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+}
+
+$PlayButtonWidth : 280px;
+$PlayButtonHeight : 300px;
+
+#Echo #Play {
+	margin-top: 10px;
+	width: $PlayButtonWidth;
+	@include respond-to(narrow){
+		margin-left: ($EchoWidth - $PlayButtonWidth) / 2;
+	}
+	@include respond-to(normal){
+		margin-left: ($EchoWidthNormal - $PlayButtonWidth) / 2;
+	}
+	height: $PlayButtonHeight;
+	font-family: $font-family;
+	cursor: pointer;
+	text-align: center;
+	background: url("./images/echoLogo.png");
+	background-size: 280px auto;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	overflow: visible;
+}
+
+#Echo #Play a{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+#Echo #Play:after{
+	content: "play now!";
+	line-height: 520px;
+	font-weight: 400;
+	font-size: 12px;
+	color: $blue;
+	width: 100%;
+	text-align: center;
+}
+
+#Echo #Play:hover{
+	background: none;
+}
+
+#Echo #Play:hover:after{
+	content : "PLAY";
+	font-size: 96px;
+	font-weight: 100;
+	color: black;
+	line-height: 246px;
+	letter-spacing: 20px;
+}
+
+#Echo #Play:active:after{
+	color: white;
+}
+
+

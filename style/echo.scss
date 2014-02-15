@@ -1,0 +1,128 @@
+@import "home";
+
+$iphone4HeightWeb : 372px;
+$iphone5HeightWeb : 460px;
+$iphone5Height : 568px;
+$iphone4Height : 480px;
+
+@mixin respond-to-web($media) {
+	@if $media == small {
+		@media (max-device-height: $iphone4Height - 1) { @content; }
+	}
+	@else if $media == iphone4 {
+		@media (min-device-height: $iphone4Height) and (max-device-height: $iphone5Height - 1) { @content; }
+	}
+	@else if $media == iphone5 {
+		@media (device-height: $iphone5Height) { @content; }
+	}
+	@else if $media == full {
+		@media (min-device-height: $iphone5Height + 1) { @content; }
+	}
+}
+
+@mixin respond-to-screen($media) {
+	@if $media == iphone4Web {
+		@media (max-height : $iphone4HeightWeb) { @content; }
+	}
+	@else if $media == iphone4 {
+		@media (min-height: $iphone4HeightWeb) and (max-height : $iphone5HeightWeb - 1) { @content; }
+	}
+	@else if $media == iphone5Web {
+		@media (min-height: $iphone5HeightWeb) and (max-height: $iphone5Height - 1) { @content; }
+	}
+	@else if $media == iphone5 {
+		@media (min-height: $iphone5HeightWeb) { @content; }
+	}
+}
+
+body {
+	margin: 0px;
+	height: 100%;
+}
+
+$GameWidth : 320px;
+
+@mixin GamePosition {
+	position: absolute;
+	@include respond-to-web(small) {
+		top: 62px;
+		height: $iphone4HeightWeb;
+	}
+	@include respond-to-web(iphone4){
+		top: 62px;
+		height: $iphone4HeightWeb;
+	}
+	@include respond-to-web(iphone5){
+		top: 62px;
+		height: $iphone5HeightWeb;
+	}
+	@include respond-to-web(full){
+		top: 50%;
+		margin-top: -$iphone5Height / 2;
+		height: $iphone5Height;
+	}
+}
+
+
+#Game {
+	background: url("./images/splash.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: $GameWidth;
+	left: 50%;
+	margin-left: -$GameWidth / 2;
+	@include GamePosition;
+	z-index: 2;
+}
+
+#Game iframe {
+	width: 100%;
+	height: 100%;
+	border : 0px;
+}
+
+#BackgroundCenter {
+	background: url("./images/splash.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	@include GamePosition;
+	width: 100%;
+	left: 0px;
+	z-index: 1;
+}
+
+#BackgroundTop {
+	background-color: rgb(252, 242, 1);
+	width: 100%;
+	position: absolute;
+	top:0px;
+	height: 50%;
+	z-index: 0;
+}
+
+#BackgroundBottom {
+	background-color: rgb(1, 174, 238);
+	width: 100%;
+	position: absolute;
+	bottom:0px;
+	height: 50%;
+	z-index: 0;
+}
+
+#ScrollGrab {
+	display: none;
+	font-family: $font-family;
+	font-size: 24px;
+	line-height: 200px;
+	text-align: center;
+	width: 100%;
+	height: 200px;
+	top: 50%;
+	margin-top: -100px;
+	background-color: black;
+	color: white;
+	z-index: 10000; /* should be bigger than everything else */
+	position: fixed;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
