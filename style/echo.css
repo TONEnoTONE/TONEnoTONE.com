@@ -101,16 +101,16 @@ body {
   z-index: 2; }
   @media (max-device-height: 479px) {
     #Game {
-      top: 62px;
-      height: 372px; } }
+      top: 40px;
+      height: 440px; } }
   @media (min-device-height: 480px) and (max-device-height: 567px) {
     #Game {
-      top: 62px;
-      height: 372px; } }
+      top: 40px;
+      height: 440px; } }
   @media (device-height: 568px) {
     #Game {
-      top: 62px;
-      height: 460px; } }
+      top: 40px;
+      height: 528px; } }
   @media (min-device-height: 569px) {
     #Game {
       top: 50%;
@@ -133,16 +133,16 @@ body {
   z-index: 1; }
   @media (max-device-height: 479px) {
     #BackgroundCenter {
-      top: 62px;
-      height: 372px; } }
+      top: 40px;
+      height: 440px; } }
   @media (min-device-height: 480px) and (max-device-height: 567px) {
     #BackgroundCenter {
-      top: 62px;
-      height: 372px; } }
+      top: 40px;
+      height: 440px; } }
   @media (device-height: 568px) {
     #BackgroundCenter {
-      top: 62px;
-      height: 460px; } }
+      top: 40px;
+      height: 528px; } }
   @media (min-device-height: 569px) {
     #BackgroundCenter {
       top: 50%;
