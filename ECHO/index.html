@@ -17,8 +17,12 @@
 	<div id='BackgroundCenter'></div>
 	<div id='BackgroundBottom'></div>
 	<!-- <div id="ScrollGrab">Scroll Down for Full Screen</div> -->
-	<div id='Game'><iframe src="http://tonenotone.com/EchoRelease/index.html"></iframe></div>
+	<div id='Game'><iframe id='gameiframe' src="http://tonenotone.com/EchoRelease/index.html"></iframe></div>
 	<div id='Alpha'>ECHO Alpha. Questions/Comments/Bugs: tonenotone@gmail.com</div>
 	<!-- <div id='Game'><iframe src="http://10.0.1.11:8080/GRID/debug.html"></iframe></div> -->
+	<script src="./EchoInformation.js"></script>
+	<script>
+		document.getElementById('gameiframe').src = "http://tonenotone.com/EchoReleases/" + releaseVersion;
+	</script>
 </body>
 </html>
