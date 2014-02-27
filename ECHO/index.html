@@ -26,18 +26,27 @@
 	<link rel="stylesheet" type="text/css" href="../style/echo.css">
 </head>
 <body>	
+
+	<!-- SHARING -->
 	<div id="Share">
 		<a href="https://twitter.com/TONEnoTONE" target="_blank">
 			<i id="Twitter" class="fa fa-twitter"></i>
 		</a>
 	</div>
+
+	<!-- BACKGROUND DIVS -->
 	<div id='BackgroundTop'></div>
 	<div id='BackgroundCenter'></div>
 	<div id='BackgroundBottom'></div>
-	<!-- <div id="ScrollGrab">Scroll Down for Full Screen</div> -->
+
+	<!-- THE GAME IFRAME -->
 	<div id='Game'><iframe id='gameiframe' src="http://tonenotone.com/EchoRelease/index.html"></iframe></div>
+
+	<!-- FEEDBACK -->
 	<div id='Alpha'><span id="GameName">ECHO beta.</span> Help us make it better by giving <a target="_blank" href="https://docs.google.com/forms/d/1A-3R5MIHBsp-yeEf_oiln3T8kBYwOesGklvZ54QDUGw/viewform">your feedback</a>.</div>
-	<!-- <div id='Game'><iframe src="http://10.0.1.11:8080/GRID/debug.html"></iframe></div> -->
+
+	<!-- ANALYTICS AND VERSION -->
+	<script src="./EchoInformation.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -45,6 +54,9 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-48335391-1', 'tonenotone.com');
 		ga('send', 'pageview');
+
+		// GET THE LATEST VERSION
+		document.getElementById('gameiframe').src = "http://tonenotone.com/EchoReleases/" + releaseVersion;
 	</script>
 </body>
 </html>
