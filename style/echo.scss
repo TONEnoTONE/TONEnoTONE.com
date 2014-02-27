@@ -1,7 +1,7 @@
 @import "home";
 
 $iphone4HeightWeb : 440px;
-$iphone5HeightWeb : 528px;
+$iphone5HeightWeb : 518px;
 $iphone5Height : 568px;
 $iphone4Height : 480px;
 
@@ -45,15 +45,15 @@ $GameWidth : 320px;
 @mixin GamePosition {
 	position: absolute;
 	@include respond-to-web(small) {
-		top: 40px;
+		top: 0px;
 		height: $iphone4HeightWeb;
 	}
 	@include respond-to-web(iphone4){
-		top: 40px;
+		top: 0px;
 		height: $iphone4HeightWeb;
 	}
 	@include respond-to-web(iphone5){
-		top: 40px;
+		top: 0px;
 		height: $iphone5HeightWeb;
 	}
 	@include respond-to-web(full){
@@ -134,8 +134,53 @@ $GameWidth : 320px;
 	font-size: 14px;
 	line-height: 10px;
 	text-align: center;
-	color: black;
+	color: $black;
 	width: 100%;
 	height: 18px;
-	top: 6px;
+	bottom: 6px;
+	visibility: hidden;
+	@include respond-to-web(full){
+		visibility: visible;
+	}
 }
+
+#Alpha #GameName {
+	color: $white;
+}
+
+#Alpha a {
+	text-decoration: none;
+	color: $purple;
+}
+
+#Alpha a:hover {
+	text-decoration: none;
+	color: $yellow;
+}
+
+#Share {
+	text-align: right;
+	color: $black;
+	width: 200px;
+	height: 100px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 0;
+	visibility: hidden;
+	@include respond-to-web(full){
+		visibility: visible;
+		z-index: 3;
+	}
+}
+
+#Share a{
+	color: $black;
+	font-size: 30px;
+}
+
+#Share a:hover{
+	color: $white;
+	font-size: 30px;
+}
+

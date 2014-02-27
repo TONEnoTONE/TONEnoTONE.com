@@ -101,16 +101,16 @@ body {
   z-index: 2; }
   @media (max-device-height: 479px) {
     #Game {
-      top: 40px;
+      top: 0px;
       height: 440px; } }
   @media (min-device-height: 480px) and (max-device-height: 567px) {
     #Game {
-      top: 40px;
+      top: 0px;
       height: 440px; } }
   @media (device-height: 568px) {
     #Game {
-      top: 40px;
-      height: 528px; } }
+      top: 0px;
+      height: 518px; } }
   @media (min-device-height: 569px) {
     #Game {
       top: 50%;
@@ -133,16 +133,16 @@ body {
   z-index: 1; }
   @media (max-device-height: 479px) {
     #BackgroundCenter {
-      top: 40px;
+      top: 0px;
       height: 440px; } }
   @media (min-device-height: 480px) and (max-device-height: 567px) {
     #BackgroundCenter {
-      top: 40px;
+      top: 0px;
       height: 440px; } }
   @media (device-height: 568px) {
     #BackgroundCenter {
-      top: 40px;
-      height: 528px; } }
+      top: 0px;
+      height: 518px; } }
   @media (min-device-height: 569px) {
     #BackgroundCenter {
       top: 50%;
@@ -189,7 +189,45 @@ body {
   font-size: 14px;
   line-height: 10px;
   text-align: center;
-  color: black;
+  color: #212122;
   width: 100%;
   height: 18px;
-  top: 6px; }
+  bottom: 6px;
+  visibility: hidden; }
+  @media (min-device-height: 569px) {
+    #Alpha {
+      visibility: visible; } }
+
+#Alpha #GameName {
+  color: #fffffd; }
+
+#Alpha a {
+  text-decoration: none;
+  color: #605ec2; }
+
+#Alpha a:hover {
+  text-decoration: none;
+  color: #f46e1e; }
+
+#Share {
+  text-align: right;
+  color: #212122;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 0;
+  visibility: hidden; }
+  @media (min-device-height: 569px) {
+    #Share {
+      visibility: visible;
+      z-index: 3; } }
+
+#Share a {
+  color: #212122;
+  font-size: 30px; }
+
+#Share a:hover {
+  color: #fffffd;
+  font-size: 30px; }
