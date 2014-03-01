@@ -52,7 +52,13 @@
 			var ifrm = document.createElement("IFRAME");
 			ifrm.setAttribute("src", src);
 			game.appendChild(ifrm);
-		}());
+
+			//and some visibility stuff to get rid of the flash
+			// ifrm.style.width = "0px";
+			ifrm.onload = function(){
+				// ifrm.style.width = "100%";
+			}
+		})();
 	</script>
 
 	<!-- FEEDBACK -->
