@@ -86,6 +86,16 @@ body {
 #Echo #Play:active:after {
   color: white; }
 
+#AppStore {
+  z-index: 10000;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 135px;
+  height: 38px;
+  background: url("./images/appStore.svg");
+  background-size: 100% 100%; }
+
 body {
   margin: 0px;
   height: 100%; }

@@ -85,3 +85,12 @@ body {
 
 #Echo #Play:active:after {
   color: white; }
+
+#AppStore {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 135px;
+  height: 40px;
+  background: url("./images/appStore.svg");
+  background-size: 100% 100%; }

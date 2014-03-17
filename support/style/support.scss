@@ -1,0 +1,80 @@
+$font-family : 'Lato', sans-serif;
+
+@mixin centeredAbsolute($width, $height){
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $width;
+	height: $height;
+	margin-top: -$height/2;
+	margin-left: -$width/2;
+}
+
+@mixin respond-to($media) {
+	@if $media == narrow {
+		@media (max-width : 460px) { @content; }
+	}
+	@else if $media == normal {
+		@media (min-width: 461px) { @content; }
+	}
+}
+
+$blue: #02ACEE;
+$red: #EE1B21;
+$yellow: #F46E1E;
+$green : #00A550;
+$purple : #605EC2;
+$pink : #ed0189;
+$black : #212122;
+$white : #fffffd;
+$offWhite : #ebebea;
+$offBlack : #414141;
+$gray : #a0a0a0;
+$screenBackground : #d9d9d9;
+
+#Container {
+	position: relative;
+	max-width: 900px;
+	margin: 50px auto 50px auto;
+	width: 90%;
+	font-family: $font-family;
+}
+
+.Question {
+	width: 100%;
+	font-family: $font-family;
+	line-height: 40px;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.Answer {
+	width: 95%;
+	margin: 10px auto 50px auto;
+	line-height: 40px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.Answer a{
+	line-height: 40px;
+	display: inline;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.Answer #LevelFive {
+	display: inline;
+	width: 200px;
+}
+
+a {
+	width: 100%;
+	color: black;
+	font-family: $font-family;
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 24px;
+	font-weight: 700;
+	display: block;
+}

@@ -1,0 +1,40 @@
+#Container {
+  position: relative;
+  max-width: 900px;
+  margin: 50px auto 50px auto;
+  width: 90%;
+  font-family: "Lato", sans-serif; }
+
+.Question {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700; }
+
+.Answer {
+  width: 95%;
+  margin: 10px auto 50px auto;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 400; }
+
+.Answer a {
+  line-height: 40px;
+  display: inline;
+  font-size: 24px;
+  font-weight: 700; }
+
+.Answer #LevelFive {
+  display: inline;
+  width: 200px; }
+
+a {
+  width: 100%;
+  color: black;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  display: block; }
