@@ -1,40 +1,5 @@
 @import "home";
 
-$iphone4HeightWeb : 440px;
-$iphone5HeightWeb : 518px;
-$iphone5Height : 568px;
-$iphone4Height : 480px;
-
-@mixin respond-to-web($media) {
-	@if $media == small {
-		@media (max-device-height: $iphone4Height - 1) { @content; }
-	}
-	@else if $media == iphone4 {
-		@media (min-device-height: $iphone4Height) and (max-device-height: $iphone5Height - 1) { @content; }
-	}
-	@else if $media == iphone5 {
-		@media (device-height: $iphone5Height) { @content; }
-	}
-	@else if $media == full {
-		@media (min-device-height: $iphone5Height + 1) { @content; }
-	}
-}
-
-@mixin respond-to-screen($media) {
-	@if $media == iphone4Web {
-		@media (max-height : $iphone4HeightWeb) { @content; }
-	}
-	@else if $media == iphone4 {
-		@media (min-height: $iphone4HeightWeb) and (max-height : $iphone5HeightWeb - 1) { @content; }
-	}
-	@else if $media == iphone5Web {
-		@media (min-height: $iphone5HeightWeb) and (max-height: $iphone5Height - 1) { @content; }
-	}
-	@else if $media == iphone5 {
-		@media (min-height: $iphone5HeightWeb) { @content; }
-	}
-}
-
 body {
 	margin: 0px;
 	height: 100%;

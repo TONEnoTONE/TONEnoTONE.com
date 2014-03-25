@@ -58,7 +58,12 @@
 			ifrm.onload = function(){
 				//if the screen width is <=320px;
 				//make the AppStore link disappear after 10 seconds
-
+				if (document.body.clientWidth <= 320){
+					setTimeout(function(){
+						var appStore = document.querySelector("#AppStore");
+						appStore.className = "invisible";
+					}, 3000);
+				}
 			}
 		})();
 	</script>

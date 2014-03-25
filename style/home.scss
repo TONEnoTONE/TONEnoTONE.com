@@ -1,5 +1,40 @@
 $font-family : 'Lato', sans-serif;
 
+$iphone4HeightWeb : 440px;
+$iphone5HeightWeb : 518px;
+$iphone5Height : 568px;
+$iphone4Height : 480px;
+
+@mixin respond-to-web($media) {
+	@if $media == small {
+		@media (max-device-height: $iphone4Height - 1) { @content; }
+	}
+	@else if $media == iphone4 {
+		@media (min-device-height: $iphone4Height) and (max-device-height: $iphone5Height - 1) { @content; }
+	}
+	@else if $media == iphone5 {
+		@media (device-height: $iphone5Height) { @content; }
+	}
+	@else if $media == full {
+		@media (min-device-height: $iphone5Height + 1) { @content; }
+	}
+}
+
+@mixin respond-to-screen($media) {
+	@if $media == iphone4Web {
+		@media (max-height : $iphone4HeightWeb) { @content; }
+	}
+	@else if $media == iphone4 {
+		@media (min-height: $iphone4HeightWeb) and (max-height : $iphone5HeightWeb - 1) { @content; }
+	}
+	@else if $media == iphone5Web {
+		@media (min-height: $iphone5HeightWeb) and (max-height: $iphone5Height - 1) { @content; }
+	}
+	@else if $media == iphone5 {
+		@media (min-height: $iphone5HeightWeb) { @content; }
+	}
+}
+
 @mixin centeredAbsolute($width, $height){
 	position: absolute;
 	top: 50%;
@@ -130,10 +165,24 @@ $PlayButtonHeight : 300px;
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	width: 135px;
-	height: 38px;
+	@include respond-to-web(full){
+		width: 135px;
+		height: 38px;
+	}
+	width: 300px;
+	height: 85px;
 	background: url("./images/appStore.svg");
 	background-size: 100% 100%;
+	opacity: 1;
+	transition: opacity .5s;
+	-webkit-transition: opacity .5s;
+}
+
+#AppStore.invisible {
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .5s;
+	-webkit-transition: opacity .5s;
 }
 
 

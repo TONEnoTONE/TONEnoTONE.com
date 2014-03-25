@@ -91,10 +91,23 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 135px;
-  height: 38px;
+  width: 300px;
+  height: 85px;
   background: url("./images/appStore.svg");
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+  opacity: 1;
+  transition: opacity .5s;
+  -webkit-transition: opacity .5s; }
+  @media (min-device-height: 569px) {
+    #AppStore {
+      width: 135px;
+      height: 38px; } }
+
+#AppStore.invisible {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s;
+  -webkit-transition: opacity .5s; }
 
 body {
   margin: 0px;
