@@ -1,0 +1,14 @@
+{
+  "name": "Echo: A Music Game",
+  "description": "Echo is part puzzle, part instrument. In this unique puzzler, solve your way through tracks of a song.",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "app": {
+    "launch": {
+      "web_url": "http://tonenotone.com/ECHO/"
+    }
+  }
+}
